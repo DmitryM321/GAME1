@@ -1,0 +1,8 @@
+public enum AttacType {
+    PHYSICAL, MAGICAL, FIRE, AIR, WATER, MAGICAL_RANGED, PHISICAL_RANGED;
+}
+
+
+
+
+

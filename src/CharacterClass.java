@@ -1,18 +1,22 @@
-public abstract class CharacterClass implements BaseClass{
+public abstract class CharacterClass implements BaseClass {
 
     private int healthPoints;
     private int manaPoints;
     private int level;
+    private AttacType attacType; // eto enum AttackType
     private int attackAmmount;
     private String name;
     private int maxHealthPoints;
     private int maxManaPoints;
 
 
+    public AttacType getAttacType() {
+        return attacType;
+    }
 
-
-
-
+    public void setAttacType(AttacType attacType) {
+        this.attacType = attacType;
+    }
 
     @Override
     public void attack() {
@@ -63,7 +67,7 @@ public abstract class CharacterClass implements BaseClass{
         else if (healthPoints > this.maxHealthPoints)
             this.healthPoints = this.maxHealthPoints;
         else
-        this.healthPoints = healthPoints;
+            this.healthPoints = healthPoints;
     }
 
     public int getManaPoints() {
@@ -76,7 +80,7 @@ public abstract class CharacterClass implements BaseClass{
         else if (manaPoints > manaPoints)
             this.manaPoints = maxManaPoints;
         else
-        this.manaPoints = manaPoints;
+            this.manaPoints = manaPoints;
     }
 
     public int getLevel() {
@@ -93,7 +97,8 @@ public abstract class CharacterClass implements BaseClass{
     }
 
     public void setAttackAmmount(int attackAmmount) {
-        this.attackAmmount = attackAmmount;
+        if(attackAmmount < 0) System.out.println("Не может быть атаки меньше нуля");
+        else this.attackAmmount = attackAmmount;
     }
 
     public String getName() {
@@ -120,3 +125,8 @@ public abstract class CharacterClass implements BaseClass{
         this.maxManaPoints = maxManaPoints;
     }
 }
+
+
+
+
+// range - dalnaya ataka
