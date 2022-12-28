@@ -9,7 +9,10 @@ public class Party {
             partyMembers[i] = memebers[i];
         }
     }
+    public void enterDungeron(Dungeon dungeon){
+        dungeon.open(this);
 
+    }
     public CharacterClass[] getPartyMembers() {
         return partyMembers;
     }
