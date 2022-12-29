@@ -1,6 +1,6 @@
 public class Party {
-    private CharacterClass[] partyMembers;                           // massiv personagey
-
+    private CharacterClass[] partyMembers;                           // massiv personageyp\
+    private Dungeon dungeon;
     public Party(CharacterClass... memebers) {       // ne znaem scolko pridet igrikov. eto spiski. pridem massiv c unnow people
         partyMembers = new CharacterClass[memebers.length];
         //  this.partyMembers = partyMembers;
@@ -9,8 +9,16 @@ public class Party {
             partyMembers[i] = memebers[i];
         }
     }
-    public void enterDungeron(Dungeon dungeon){
-        dungeon.open(this);
+    public boolean enterDungeron(Dungeon dungeon){
+       return dungeon.open(this);
+
+
+    }
+
+    public void runDungerob(){  //for() sdelat' massiv po vsem iz patry: party members attack monsters. ubili/neubili
+                                // esli ubili idem dalshe, esli net - proigrali/
+                                // nuzhen dvoiniy vlozhennyi cikl/
+
 
     }
     public CharacterClass[] getPartyMembers() {
@@ -26,8 +34,14 @@ public class Party {
             for (CharacterClass partyMember : partyMembers) {
                 partyMember.info();
             }
-
-
         }
+
+    public Dungeon getDungeon() {
+        return dungeon;
     }
+
+    public void setDungeon(Dungeon dungeon) {
+        this.dungeon = dungeon;
+    }
+}
 

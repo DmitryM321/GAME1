@@ -4,6 +4,11 @@ public class Main {
                 new Archer("Legolas"), new Healer("Radogast"));
         party.info();
         Dungeon dungeon = new Dungeon(); // new podzemelie
-        party.enterDungeron(dungeon);
+        if (party.enterDungeron(dungeon)) {       //esli my zashly
+            party.setDungeon(dungeon);
+            party.runDungerob();
+        } else System.out.println("Game over");
+
+        // party.enterDungeron(dungeon);
     }
 }

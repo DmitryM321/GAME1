@@ -1,5 +1,5 @@
 public interface BasicDungeon {
-    void open(Party party);
+    boolean open(Party party);
 
 
 
